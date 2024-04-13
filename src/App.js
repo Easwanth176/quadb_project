@@ -62,6 +62,7 @@ function App() {
     displayNotification("To-do list saved successfully!");
   };
 
+
   return (
     <div className="App">
       <img src={logo} alt="Company Logo" className="logo" />
@@ -98,8 +99,8 @@ function App() {
           </ul>
         </div>
         <div className="footer">
-        <button onClick={handleSaveButtonClick}>Save</button>
-          <button onClick={() => localStorage.clear()}>Delete All</button>
+          <p>You Can Save Your Progress here</p>
+          <button onClick={handleSaveButtonClick}>Save</button>
         </div>
       </header>
     </div>
