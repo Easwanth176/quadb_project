@@ -49,16 +49,22 @@ function App() {
     );
   };
 
+  // State to manage the input value
+  const [inputValue, setInputValue] = useState('');
+
   // Function to handle input field change
   const handleInputChange = (event) => {
     // Set input value to state
     // This will update the input field value as the user types
+    setInputValue(event.target.value);
   };
 
   // Function to handle add button click
   const handleAddButtonClick = () => {
     // Call addTodoItem function with input value
     // Clear input field after adding
+    addTodoItem(inputValue);
+    setInputValue(''); // Clear input field
   };
 
   // JSX for rendering the to-do list
@@ -83,12 +89,12 @@ function App() {
           <input
             type="text"
             placeholder="Enter Your New Task"
+            value={inputValue}
             onChange={handleInputChange}
           />
           <button onClick={handleAddButtonClick}>Add</button>
         </div>
         <ul>
-          {/* Render the list of to-do items */}
           {todoItems}
         </ul>
         <div>
