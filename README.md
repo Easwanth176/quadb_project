@@ -30,12 +30,4 @@ QUADB To-Do List is a simple web application built with React that allows users 
 
 ## Mobile View
 
-![Mobile View](/images/mobile-view.png)
-
-## Contributing
-
-Contributions are welcome! If you have any suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+![1](https://github.com/Easwanth176/quadb_project/assets/103351652/45daf1ef-a4b2-4d9f-8997-91a791659232)
