@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from 'react';
 import logo from './logo.jpeg'; 
 import './App.css';
@@ -7,6 +6,14 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [notification, setNotification] = useState(null);
+
+  // Load todo list from local storage when component mounts
+  useEffect(() => {
+    const storedTodoList = JSON.parse(localStorage.getItem('todoList'));
+    if (storedTodoList) {
+      setTodoList(storedTodoList);
+    }
+  }, []);
 
   const displayNotification = (message) => {
     setNotification(message);
@@ -50,6 +57,11 @@ function App() {
     }
   };
 
+  const handleSaveButtonClick = () => {
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+    displayNotification("To-do list saved successfully!");
+  };
+
   return (
     <div className="App">
       <img src={logo} alt="Company Logo" className="logo" />
@@ -64,7 +76,6 @@ function App() {
             onChange={handleInputChange}
           />
           <button onClick={handleAddButtonClick}>Add</button>
-
         </div>
 
         <div className="container">
@@ -87,8 +98,8 @@ function App() {
           </ul>
         </div>
         <div className="footer">
-          <button>Save</button>
-          <button>Delete All</button>
+        <button onClick={handleSaveButtonClick}>Save</button>
+          <button onClick={() => localStorage.clear()}>Delete All</button>
         </div>
       </header>
     </div>
