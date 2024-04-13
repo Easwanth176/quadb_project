@@ -3,22 +3,37 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #f9fbfe;
+  background-color: #282c34;
 }
 
 .App {
   text-align: center;
 }
 
+ul p {
+  font-size: 38px;
+  font-weight: 500;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 .logo {
-  max-width: 100px; /* Adjust the maximum width as needed */
-  margin-bottom: 20px; /* Add margin to separate the logo from other elements */
+  max-width: 140px;
+  margin-bottom: 20px;
+  margin-right: 80%;
+  margin-top: 40px;
+}
+
+h1 {
+  font-size: 60px;
+  margin-top: 20px;
+  margin-bottom: 45px;
+  font-weight: bold;
 }
 
 header {
-  background-color: #282c34;
+  margin-bottom: 20px;
   padding: 20px;
+  margin-top: -150px;
   color: white;
 }
 
@@ -46,22 +61,62 @@ button:hover {
 
 ul {
   list-style: none;
+  border: 8px solid white;
   padding: 0;
+  height: 400px;
+  max-height: 400px;
+  overflow: auto;
+}
+
+ul {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+ul {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255, 255, 255) rgba(255, 255, 255, 0.1); /* Scrollbar thumb color and track color */
+}
+
+ul::-webkit-scrollbar {
+  width: 2px;
+  border-radius: 5px;
 }
 
 li {
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
+  padding: 20px; /* Increase padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px; /* Increase margin */
   display: flex;
   align-items: center;
 }
 
 span {
   flex: 1;
-  font-size: 18px;
+  font-size: 30px;
 }
 
 .checked {
   text-decoration: line-through;
   color: #ccc;
+  font-size: 25px;
+}
+
+/* Increase the size of the checkbox */
+input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+}
+
+/* Increase the size of the checked checkbox */
+input[type="checkbox"]:checked {
+  width: 24px;
+  height: 24px;
+}
+
+.footer button {
+  margin-top: 20px;
+  margin-left: 50px;
+  font-size: 20px;
 }
