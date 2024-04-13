@@ -1,149 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+/* App.css */
 
-.bg-container {
-    background-color: #f9fbfe;
-    height: 100vh;
-    padding-top: 40px;
-    padding-bottom: 50px;
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9fbfe;
 }
 
-.container {
-    margin-bottom: 50px;
+.App {
+  text-align: center;
 }
 
-/*to dos heading main*/
-.todos-heading {
-    font-family: "Roboto";
-    font-size: 55px;
-    font-weight: 500;
-    text-align: center;
-    padding-top: 20px;
-    margin-bottom: 20px;
+
+.logo {
+  max-width: 100px; /* Adjust the maximum width as needed */
+  margin-bottom: 20px; /* Add margin to separate the logo from other elements */
 }
 
-/*input container*/
-.input-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-left: 0px;
+header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
 }
 
-@media screen and (min-width:768px) {
-    .input-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-left: 0px;
-    }
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
-.create-taks-heading {
-    font-family: "Roboto";
-    font-size: 38px;
-    font-weight: 500;
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
 }
 
-.create-taks-heading-bold {
-    font-weight: 700;
+button:hover {
+  background-color: #45a049;
 }
 
-.create-task-input {
-    background-color: white;
-    width: 100%;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #e4e7eb;
-    padding: 15px;
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-.error-message {
-    color: red;
+li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
 }
 
-.add-button,
-.save-button,
-.clear-button {
-    background-color: #4c63b6;
-    color: white;
-    width: 80px;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 20px;
-}
-
-/*my tasks container*/
-.task-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 30px;
-}
-
-@media screen and (min-width:768px) {
-    .task-container {
-        margin-top: 0px;
-    }
-}
-
-/*to do items container*/
-.todo-items-container {
-    list-style: none;
-    margin-left: 0px;
-    padding-left: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.todo-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.label-checkbox {
-    width: 20px;
-    height: 20px;
-}
-
-.label-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #e6f6ff;
-    border-left: 8px solid #096f92;
-    border-radius: 10px;
-    padding: 5px 20px 5px 10px;
-    margin-left: 10px;
-    width: 100%;
-}
-
-.label-text {
-    font-size: 25px;
-}
-
-.delete-icon-container {
-    text-align: right;
-    align-self: center;
-}
-
-.delete-icon {
-    font-size: 20px;
-}
-
-.delete-icon:hover {
-    cursor: pointer;
+span {
+  flex: 1;
+  font-size: 18px;
 }
 
 .checked {
-    text-decoration: line-through;
-    color: red;
+  text-decoration: line-through;
+  color: #ccc;
 }

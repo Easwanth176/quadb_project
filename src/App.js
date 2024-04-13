@@ -1,9 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import logo from './logo.jpeg'; // Import your logo image
 
 function App() {
   // State to manage the to-do list
   const [todoList, setTodoList] = useState([]);
+
+  // State to manage notifications
+  const [notification, setNotification] = useState(null);
+
+  // Function to display notification
+  const displayNotification = (message) => {
+    setNotification(message);
+    setTimeout(() => {
+      setNotification(null);
+    }, 3000); // Hide notification after 3 seconds
+  };
 
   // Function to get the to-do list from local storage
   useEffect(() => {
@@ -23,6 +35,7 @@ function App() {
   // Function to save the to-do list to local storage
   const saveToDoListToLocalStorage = () => {
     localStorage.setItem("todoListKey", JSON.stringify(todoList));
+    displayNotification("To-do list saved successfully!");
   };
 
   // Function to add a new to-do item
@@ -33,11 +46,13 @@ function App() {
       isChecked: false
     };
     setTodoList(prevTodoList => [...prevTodoList, newTodo]);
+    displayNotification("Task added successfully!");
   };
 
   // Function to delete a to-do item
   const deleteTodoItem = (id) => {
     setTodoList(prevTodoList => prevTodoList.filter(todo => todo.uniqueId !== id));
+    displayNotification("Task deleted successfully!");
   };
 
   // Function to toggle the completion status of a to-do item
@@ -47,6 +62,7 @@ function App() {
         todo.uniqueId === id ? { ...todo, isChecked: !todo.isChecked } : todo
       )
     );
+    displayNotification("Task status updated successfully!");
   };
 
   // State to manage the input value
@@ -80,10 +96,14 @@ function App() {
     </li>
   ));
 
+  // JSX for displaying notifications
+  const notificationElement = notification && <div className="notification">{notification}</div>;
+
   // JSX for the entire component
   return (
     <div className="App">
       <header className="App-header">
+      <img src={logo} alt="Company Logo" className="logo" />
         <h1>To-Do List</h1>
         <div>
           <input
@@ -101,6 +121,7 @@ function App() {
           <button onClick={saveToDoListToLocalStorage}>Save</button>
           <button onClick={() => setTodoList([])}>Clear</button>
         </div>
+        {notificationElement}
       </header>
     </div>
   );
